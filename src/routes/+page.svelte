@@ -77,7 +77,7 @@
         rel="noopener"
         aria-label="Instagram"
       >
-        <img class="social-icon-img" src="/icons/instagram.svg" alt="" width="20" height="20" />
+        <img class="social-icon-img" src="/icons/ig-icon.svg" alt="" width="20" height="20" />
       </a>
 
       <a
@@ -87,7 +87,7 @@
         rel="noopener"
         aria-label="TikTok"
       >
-        <img class="social-icon-img" src="/icons/tiktok.svg" alt="" width="20" height="20" />
+        <img class="social-icon-img" src="/icons/tk-icon.svg" alt="" width="20" height="20" />
       </a>
     </div>
   </nav>
