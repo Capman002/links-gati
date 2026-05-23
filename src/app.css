@@ -303,8 +303,8 @@ button:focus-visible {
   opacity: 0.6;
 }
 
-/* Social Icons (Row) */
-.social-links-wrapper {
+/* Footer Icons (Row) */
+.footer-links-wrapper {
   display: flex;
   gap: 20px;
   justify-content: center;
@@ -313,7 +313,7 @@ button:focus-visible {
   padding-top: 2vh;
 }
 
-.social-icon-btn {
+.footer-icon-btn {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -326,12 +326,12 @@ button:focus-visible {
   transition: transform 0.2s cubic-bezier(0.2, 0, 0, 1), background 0.2s;
 }
 
-.social-icon-btn:active {
+.footer-icon-btn:active {
   transform: scale(0.97);
   background: #2c2c2e;
 }
 
-.social-icon-btn .social-icon-img {
+.footer-icon-btn .footer-icon-img {
   width: 20px;
   /* Reduced relatively since button is bigger */
   height: 20px;

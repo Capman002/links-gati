@@ -68,26 +68,26 @@
       <img class="arrow-icon-img" src="/icons/chevron-right.svg" alt="" width="16" height="16" />
     </a>
 
-    <!-- Social Icons Container (Instagram & TikTok) -->
-    <div class="social-links-wrapper">
+    <!-- Footer Icons Container -->
+    <div class="footer-links-wrapper">
       <a
         href="https://www.instagram.com/gattsossuplementos/"
-        class="social-icon-btn"
+        class="footer-icon-btn"
         target="_blank"
         rel="noopener"
         aria-label="Instagram"
       >
-        <img class="social-icon-img" src="/icons/ig-icon.svg" alt="" width="20" height="20" />
+        <img class="footer-icon-img" src="/icons/ig-icon.svg" alt="" width="20" height="20" />
       </a>
 
       <a
         href="https://www.tiktok.com/@gattsossuplementos"
-        class="social-icon-btn"
+        class="footer-icon-btn"
         target="_blank"
         rel="noopener"
         aria-label="TikTok"
       >
-        <img class="social-icon-img" src="/icons/tk-icon.svg" alt="" width="20" height="20" />
+        <img class="footer-icon-img" src="/icons/tk-icon.svg" alt="" width="20" height="20" />
       </a>
     </div>
   </nav>
