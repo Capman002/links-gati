@@ -15,7 +15,7 @@ let cache = {
 function getPhoneForRegion(region) {
   const normalizedRegion = (region || '').toLowerCase();
   if (normalizedRegion.includes('rio do sul')) {
-    return '5547999990002';
+    return '5518998153017';
   }
   return '5511999990001'; 
 }
