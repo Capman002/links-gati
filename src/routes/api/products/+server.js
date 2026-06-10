@@ -15,9 +15,9 @@ let cache = {
 function getPhoneForRegion(region) {
   const normalizedRegion = (region || '').toLowerCase();
   if (normalizedRegion.includes('rio do sul')) {
-    return '5518998153017';
+    return '5547999758511';
   }
-  return '5511999990001'; 
+  return '5518996693067';
 }
 
 async function fetchAndParseProducts() {
@@ -80,7 +80,7 @@ export async function GET({ url, setHeaders }) {
     return json(products);
   } catch (error) {
     console.error('Error fetching products:', error);
-    
+
     // Se deu erro mas tem cache antigo, usa ele mesmo (stale)
     if (cache.data) {
       setHeaders({ 'Cache-Control': 'public, max-age=60' });

@@ -100,8 +100,8 @@ button:focus-visible {
 }
 
 .logo-wrapper {
-  width: 118px;
-  height: 118px;
+  width: 178px;
+  height: 168px;
   margin-bottom: 20px;
   display: flex;
   align-items: center;
@@ -392,7 +392,8 @@ button:focus-visible {
   letter-spacing: -0.5px;
   margin: 0;
   line-height: 1.2;
-  padding-bottom: 0.1em; /* Evita que a parte de baixo da letra 'g' seja cortada pelo background-clip */
+  padding-bottom: 0.1em;
+  /* Evita que a parte de baixo da letra 'g' seja cortada pelo background-clip */
   text-transform: none;
   background: linear-gradient(135deg, #ffffff 0%, #a1a1aa 100%);
   -webkit-background-clip: text;
@@ -452,13 +453,28 @@ button:focus-visible {
   animation: skeletonPulse 1.2s ease-in-out infinite;
 }
 
-.skeleton-line.w-70 { width: 70%; }
-.skeleton-line.w-50 { width: 50%; }
-.skeleton-line.w-30 { width: 30%; }
+.skeleton-line.w-70 {
+  width: 70%;
+}
+
+.skeleton-line.w-50 {
+  width: 50%;
+}
+
+.skeleton-line.w-30 {
+  width: 30%;
+}
 
 @keyframes skeletonPulse {
-  0%, 100% { opacity: 0.4; }
-  50% { opacity: 1; }
+
+  0%,
+  100% {
+    opacity: 0.4;
+  }
+
+  50% {
+    opacity: 1;
+  }
 }
 
 /* Tabs System (Segmented Control) */
@@ -516,7 +532,8 @@ button:focus-visible {
   display: block;
 }
 
-.category-select:focus, .category-select.open {
+.category-select:focus,
+.category-select.open {
   outline: none;
   border-color: rgba(255, 255, 255, 0.25);
   background: #2c2c2e;
@@ -541,7 +558,8 @@ button:focus-visible {
   top: calc(100% + 8px);
   left: 0;
   width: 100%;
-  background: #2c2c2e; /* Slightly lighter than the panel for depth */
+  background: #2c2c2e;
+  /* Slightly lighter than the panel for depth */
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 12px;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
@@ -560,6 +578,7 @@ button:focus-visible {
     opacity: 0;
     transform: translateY(-8px) scale(0.98);
   }
+
   to {
     opacity: 1;
     transform: translateY(0) scale(1);
@@ -589,7 +608,8 @@ button:focus-visible {
 }
 
 .custom-dropdown-item.selected {
-  background: rgba(10, 132, 255, 0.15); /* iOS blue tint */
+  background: rgba(10, 132, 255, 0.15);
+  /* iOS blue tint */
   color: var(--buy-blue);
   font-weight: 600;
 }
@@ -609,7 +629,8 @@ button:focus-visible {
   display: flex;
   align-items: center;
   width: 100%;
-  background: #1c1c1e; /* Match panel background */
+  background: #1c1c1e;
+  /* Match panel background */
   border: 1px solid rgba(255, 255, 255, 0.05);
   border-radius: 12px;
   padding: 12px 16px;
@@ -675,21 +696,48 @@ button:focus-visible {
   animation: cardSlideIn 0.35s ease-out both;
 }
 
-.catalog-grid-enter .catalog-card:nth-child(1) { animation-delay: 0ms; }
-.catalog-grid-enter .catalog-card:nth-child(2) { animation-delay: 40ms; }
-.catalog-grid-enter .catalog-card:nth-child(3) { animation-delay: 80ms; }
-.catalog-grid-enter .catalog-card:nth-child(4) { animation-delay: 120ms; }
-.catalog-grid-enter .catalog-card:nth-child(5) { animation-delay: 160ms; }
-.catalog-grid-enter .catalog-card:nth-child(6) { animation-delay: 200ms; }
-.catalog-grid-enter .catalog-card:nth-child(7) { animation-delay: 240ms; }
-.catalog-grid-enter .catalog-card:nth-child(8) { animation-delay: 280ms; }
-.catalog-grid-enter .catalog-card:nth-child(n+9) { animation-delay: 300ms; }
+.catalog-grid-enter .catalog-card:nth-child(1) {
+  animation-delay: 0ms;
+}
+
+.catalog-grid-enter .catalog-card:nth-child(2) {
+  animation-delay: 40ms;
+}
+
+.catalog-grid-enter .catalog-card:nth-child(3) {
+  animation-delay: 80ms;
+}
+
+.catalog-grid-enter .catalog-card:nth-child(4) {
+  animation-delay: 120ms;
+}
+
+.catalog-grid-enter .catalog-card:nth-child(5) {
+  animation-delay: 160ms;
+}
+
+.catalog-grid-enter .catalog-card:nth-child(6) {
+  animation-delay: 200ms;
+}
+
+.catalog-grid-enter .catalog-card:nth-child(7) {
+  animation-delay: 240ms;
+}
+
+.catalog-grid-enter .catalog-card:nth-child(8) {
+  animation-delay: 280ms;
+}
+
+.catalog-grid-enter .catalog-card:nth-child(n+9) {
+  animation-delay: 300ms;
+}
 
 @keyframes cardSlideIn {
   from {
     opacity: 0;
     transform: translateX(-12px);
   }
+
   to {
     opacity: 1;
     transform: translateX(0);

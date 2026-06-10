@@ -7,7 +7,13 @@
   <!-- HEADER SECTION -->
   <header class="header">
     <div class="logo-wrapper">
-      <img class="logo-img" src="/logo-gati.svg" alt="Gati Suplementos Logo" width="118" height="118" />
+      <img
+        class="logo-img"
+        src="/logotipo-gati.png"
+        alt="Gati Suplementos Logo"
+        width="118"
+        height="118"
+      />
       <h1 class="sr-only">Gati Suplementos</h1>
     </div>
 
@@ -19,9 +25,21 @@
   <!-- LINKS BUTTONS LIST -->
   <nav class="links-wrapper" aria-label="Links oficiais Gati Suplementos">
     <!-- Link Catalog (Hero Card) -->
-    <a href="/catalogo" class="catalog-card-v2" data-sveltekit-preload-data="hover" aria-label="Ver Catálogo Completo">
+    <a
+      href="/catalogo"
+      class="catalog-card-v2"
+      data-sveltekit-preload-data="hover"
+      aria-label="Ver Catálogo Completo"
+    >
       <div class="catalog-card-left">
-        <img src="/catalog-bg.png" class="catalog-thumb-img" alt="" width="64" height="64" loading="eager" />
+        <img
+          src="/catalog-bg.png"
+          class="catalog-thumb-img"
+          alt=""
+          width="64"
+          height="64"
+          loading="eager"
+        />
         <div class="catalog-info">
           <span class="catalog-tag">Nossos Produtos</span>
           <span class="catalog-name">Ver Catálogo</span>
@@ -34,38 +52,62 @@
 
     <!-- Link 1: WhatsApp SP -->
     <a
-      href="https://wa.me/5511999990001?text=Oi,%20gostaria%20de%20falar%20com%20o%20atendimento%20de%20Ara%C3%A7atuba"
+      href="https://wa.me/5518996693067?text=Oi,%20gostaria%20de%20falar%20com%20o%20atendimento%20de%20Ara%C3%A7atuba"
       class="link-btn"
       target="_blank"
       rel="noopener"
     >
       <div class="link-content">
         <span class="link-icon">
-          <img class="link-icon-img" src="/icons/whatsapp.svg" alt="" width="22" height="22" />
+          <img
+            class="link-icon-img"
+            src="/icons/whatsapp.svg"
+            alt=""
+            width="22"
+            height="22"
+          />
         </span>
         <div class="link-details">
           <span class="link-title">Araçatuba/SP e Região</span>
         </div>
       </div>
-      <img class="arrow-icon-img" src="/icons/chevron-right.svg" alt="" width="16" height="16" />
+      <img
+        class="arrow-icon-img"
+        src="/icons/chevron-right.svg"
+        alt=""
+        width="16"
+        height="16"
+      />
     </a>
 
     <!-- Link 2: WhatsApp SC -->
     <a
-      href="https://wa.me/5547999990002?text=Oi,%20gostaria%20de%20falar%20com%20o%20atendimento%20de%20Rio%20do%20Sul"
+      href="https://wa.me/5547999758511?text=Oi,%20gostaria%20de%20falar%20com%20o%20atendimento%20de%20Rio%20do%20Sul"
       class="link-btn"
       target="_blank"
       rel="noopener"
     >
       <div class="link-content">
         <span class="link-icon">
-          <img class="link-icon-img" src="/icons/whatsapp.svg" alt="" width="22" height="22" />
+          <img
+            class="link-icon-img"
+            src="/icons/whatsapp.svg"
+            alt=""
+            width="22"
+            height="22"
+          />
         </span>
         <div class="link-details">
           <span class="link-title">Rio do Sul/SC e Região</span>
         </div>
       </div>
-      <img class="arrow-icon-img" src="/icons/chevron-right.svg" alt="" width="16" height="16" />
+      <img
+        class="arrow-icon-img"
+        src="/icons/chevron-right.svg"
+        alt=""
+        width="16"
+        height="16"
+      />
     </a>
 
     <!-- Footer Icons Container -->
@@ -77,7 +119,13 @@
         rel="noopener"
         aria-label="Instagram"
       >
-        <img class="footer-icon-img" src="/icons/ig-icon.svg" alt="" width="20" height="20" />
+        <img
+          class="footer-icon-img"
+          src="/icons/ig-icon.svg"
+          alt=""
+          width="20"
+          height="20"
+        />
       </a>
 
       <a
@@ -87,7 +135,13 @@
         rel="noopener"
         aria-label="TikTok"
       >
-        <img class="footer-icon-img" src="/icons/tk-icon.svg" alt="" width="20" height="20" />
+        <img
+          class="footer-icon-img"
+          src="/icons/tk-icon.svg"
+          alt=""
+          width="20"
+          height="20"
+        />
       </a>
     </div>
   </nav>
