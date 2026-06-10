@@ -3,7 +3,7 @@ import Papa from 'papaparse';
 import { dev } from '$app/environment';
 
 const SHEET_CSV_URL = 'https://docs.google.com/spreadsheets/d/1sp6b3GdTY1LcWGVfcQJP2h-LoaDIBMi22el_laGhKdM/gviz/tq?tqx=out:csv';
-const CACHE_TTL = 5 * 60 * 1000; // 5 minutos em milissegundos
+const CACHE_TTL = 1 * 0 * 1000; // 5 minutos em milissegundos
 const ACTIVE_TTL = dev ? 10 * 1000 : CACHE_TTL; // 10 segundos em dev, 5 minutos em prod
 
 // Cache em memória — sobrevive entre requests enquanto o servidor estiver rodando
