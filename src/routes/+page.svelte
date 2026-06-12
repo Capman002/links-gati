@@ -48,7 +48,7 @@
     <div class="logo-wrapper">
       <img
         class="logo-img"
-        src="/logotipo-gati.png"
+        src="/logotipo-gati-v2.png"
         alt="Gati Suplementos Logo"
         width="118"
         height="118"
