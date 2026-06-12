@@ -934,7 +934,7 @@ button:focus-visible {
   border-radius: 50%;
   filter: blur(100px);
   background: #ff3b30;
-  /* Gati Red */
+  /* Gatt Red */
   opacity: 0;
   animation: breathePulse 8s ease-in-out infinite;
   will-change: transform, opacity;

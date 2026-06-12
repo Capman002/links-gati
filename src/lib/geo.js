@@ -10,7 +10,7 @@
  *   - Rio do Sul/SC → estados do Sul (SC, PR, RS)
  */
 
-const CACHE_KEY = 'gati_user_region';
+const CACHE_KEY = 'gatt_user_region';
 const CACHE_TTL = 24 * 60 * 60 * 1000; // 24 horas
 
 /**

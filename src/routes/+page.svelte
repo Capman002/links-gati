@@ -20,7 +20,7 @@
     },
     'rio do sul': {
       whatsapp: 'https://wa.me/5547999758511?text=Oi,%20gostaria%20de%20falar%20com%20o%20atendimento%20de%20Rio%20do%20Sul',
-      instagram: 'https://www.instagram.com/gati_suplementos/',
+      instagram: 'https://www.instagram.com/gatt_suplementos/',
       label: 'Rio do Sul/SC e Região'
     }
   };
@@ -48,12 +48,12 @@
     <div class="logo-wrapper">
       <img
         class="logo-img"
-        src="/logotipo-gati-v2.png"
-        alt="Gati Suplementos Logo"
+        src="/logotipo-gatt-v2.png"
+        alt="Gatt Suplementos Logo"
         width="118"
         height="118"
       />
-      <h1 class="sr-only">Gati Suplementos</h1>
+      <h1 class="sr-only">Gatt Suplementos</h1>
     </div>
 
     <p class="bio">
@@ -62,7 +62,7 @@
   </header>
 
   <!-- LINKS BUTTONS LIST -->
-  <nav class="links-wrapper" aria-label="Links oficiais Gati Suplementos">
+  <nav class="links-wrapper" aria-label="Links oficiais Gatt Suplementos">
     <!-- Link Catalog (Hero Card) -->
     <a
       href="/catalogo"

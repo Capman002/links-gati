@@ -3,7 +3,7 @@
   "configVersion": 1,
   "workspaces": {
     "": {
-      "name": "links-gati",
+      "name": "links-gatt",
       "dependencies": {
         "papaparse": "^5.5.3",
       },
