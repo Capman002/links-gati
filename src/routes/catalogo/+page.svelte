@@ -102,8 +102,17 @@
   let cartCount = $derived(cartItems.reduce((sum, item) => sum + item.quantity, 0));
 
   function parsePrice(priceStr) {
-    const cleaned = priceStr.replace(/[^\d,]/g, '').replace(',', '.');
-    return parseFloat(cleaned) || 0;
+    if (!priceStr) return 0;
+    if (typeof priceStr !== 'string') {
+      priceStr = String(priceStr);
+    }
+    if (priceStr.includes(',')) {
+      const cleaned = priceStr.replace(/\./g, '').replace(',', '.').replace(/[^\d.]/g, '');
+      return parseFloat(cleaned) || 0;
+    } else {
+      const cleaned = priceStr.replace(/[^\d.]/g, '');
+      return parseFloat(cleaned) || 0;
+    }
   }
 
   function formatPrice(value) {
