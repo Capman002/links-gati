@@ -1,14 +1,34 @@
 <script>
+  import { detectNearestStore } from '$lib/geo.js';
+  import { onMount } from 'svelte';
+
   let { data } = $props();
   
   let regions = $derived([...new Set(data.products.map(p => p.region).filter(Boolean))].sort());
   let activeTab = $state('');
+  let geoResolved = $state(false);
 
-  $effect(() => {
-    if (regions.length > 0 && !regions.includes(activeTab)) {
-      activeTab = regions[0];
+  // Mapeia o resultado da geo para o nome da região no catálogo
+  function matchRegionTab(storeName, availableRegions) {
+    if (!storeName || availableRegions.length === 0) return null;
+
+    const needle = storeName.toLowerCase();
+    return availableRegions.find(r => r.toLowerCase().includes(needle)) || null;
+  }
+
+  // Definir tab inicial: tenta geo primeiro, fallback para primeira região
+  onMount(async () => {
+    const store = await detectNearestStore();
+    if (store && regions.length > 0) {
+      const matched = matchRegionTab(store, regions);
+      if (matched) {
+        activeTab = matched;
+      }
     }
+    geoResolved = true;
   });
+
+
 
   let availableTags = $derived.by(() => {
     const types = new Set();
@@ -22,7 +42,9 @@
   let searchQuery = $state('');
 
   let filteredProducts = $derived.by(() => {
-    let filtered = data.products.filter(p => p.region === activeTab);
+    let filtered = activeTab
+      ? data.products.filter(p => p.region === activeTab)
+      : [...data.products];
     if (activeTag !== 'Todos') {
       filtered = filtered.filter(p => p.type === activeTag);
     }
@@ -84,17 +106,7 @@
     </div>
   </div>
 
-  {#if regions.length > 0}
-  <div class="tabs-wrapper">
-    {#each regions as region}
-      <button 
-        class="tab-btn {activeTab === region ? 'active' : ''}" 
-        onclick={() => activeTab = region}>
-        {region}
-      </button>
-    {/each}
-  </div>
-  {/if}
+
 
   {#if availableTags.length > 1}
   <div class="category-select-wrapper">

@@ -1,3 +1,42 @@
+<script>
+  import { detectNearestStore } from '$lib/geo.js';
+  import { onMount } from 'svelte';
+
+  let nearestStore = $state(null);
+  let geoLoaded = $state(false);
+
+  onMount(async () => {
+    const store = await detectNearestStore();
+    nearestStore = store;
+    geoLoaded = true;
+  });
+
+  // Dados das duas lojas
+  const stores = {
+    araçatuba: {
+      whatsapp: 'https://wa.me/5518996693067?text=Oi,%20gostaria%20de%20falar%20com%20o%20atendimento%20de%20Ara%C3%A7atuba',
+      instagram: 'https://www.instagram.com/gattsossuplementos/',
+      label: 'Araçatuba/SP e Região'
+    },
+    'rio do sul': {
+      whatsapp: 'https://wa.me/5547999758511?text=Oi,%20gostaria%20de%20falar%20com%20o%20atendimento%20de%20Rio%20do%20Sul',
+      instagram: 'https://www.instagram.com/gati_suplementos/',
+      label: 'Rio do Sul/SC e Região'
+    }
+  };
+
+  const tiktokUrl = 'https://www.tiktok.com/@gattsossuplementos';
+
+  // Mostra só a loja detectada; se falhou, mostra as duas
+  let visibleStoreKeys = $derived.by(() => {
+    if (geoLoaded && nearestStore) {
+      return [nearestStore];
+    }
+    // Fallback: mostra as duas enquanto carrega ou se falhou
+    return ['araçatuba', 'rio do sul'];
+  });
+</script>
+
 <div class="ambient-background" aria-hidden="true">
   <div class="ambient-glow glow-1"></div>
   <div class="ambient-glow glow-2"></div>
@@ -50,9 +89,75 @@
       </div>
     </a>
 
-    <!-- Link 1: WhatsApp SP -->
+    <!-- WhatsApp Links - ordenados por proximidade -->
+    {#each visibleStoreKeys as key (key)}
+      {@const store = stores[key]}
+      <a
+        href={store.whatsapp}
+        class="link-btn"
+        target="_blank"
+        rel="noopener"
+      >
+        <div class="link-content">
+          <span class="link-icon">
+            <img
+              class="link-icon-img"
+              src="/icons/whatsapp.svg"
+              alt=""
+              width="22"
+              height="22"
+            />
+          </span>
+          <div class="link-details">
+            <span class="link-title">{store.label}</span>
+          </div>
+        </div>
+        <img
+          class="arrow-icon-img"
+          src="/icons/chevron-right.svg"
+          alt=""
+          width="16"
+          height="16"
+        />
+      </a>
+    {/each}
+
+    <!-- Instagram Links - dinâmico por estado -->
+    {#each visibleStoreKeys as key (key)}
+      {@const store = stores[key]}
+      <a
+        href={store.instagram}
+        class="link-btn"
+        target="_blank"
+        rel="noopener"
+      >
+        <div class="link-content">
+          <span class="link-icon">
+            <img
+              class="link-icon-img"
+              src="/icons/ig-icon.svg"
+              alt=""
+              width="22"
+              height="22"
+            />
+          </span>
+          <div class="link-details">
+            <span class="link-title">{store.label}</span>
+          </div>
+        </div>
+        <img
+          class="arrow-icon-img"
+          src="/icons/chevron-right.svg"
+          alt=""
+          width="16"
+          height="16"
+        />
+      </a>
+    {/each}
+
+    <!-- TikTok - mesmo para ambas as lojas -->
     <a
-      href="https://wa.me/5518996693067?text=Oi,%20gostaria%20de%20falar%20com%20o%20atendimento%20de%20Ara%C3%A7atuba"
+      href={tiktokUrl}
       class="link-btn"
       target="_blank"
       rel="noopener"
@@ -61,14 +166,14 @@
         <span class="link-icon">
           <img
             class="link-icon-img"
-            src="/icons/whatsapp.svg"
+            src="/icons/tk-icon.svg"
             alt=""
             width="22"
             height="22"
           />
         </span>
         <div class="link-details">
-          <span class="link-title">Araçatuba/SP e Região</span>
+          <span class="link-title">TikTok Oficial</span>
         </div>
       </div>
       <img
@@ -79,70 +184,7 @@
         height="16"
       />
     </a>
-
-    <!-- Link 2: WhatsApp SC -->
-    <a
-      href="https://wa.me/5547999758511?text=Oi,%20gostaria%20de%20falar%20com%20o%20atendimento%20de%20Rio%20do%20Sul"
-      class="link-btn"
-      target="_blank"
-      rel="noopener"
-    >
-      <div class="link-content">
-        <span class="link-icon">
-          <img
-            class="link-icon-img"
-            src="/icons/whatsapp.svg"
-            alt=""
-            width="22"
-            height="22"
-          />
-        </span>
-        <div class="link-details">
-          <span class="link-title">Rio do Sul/SC e Região</span>
-        </div>
-      </div>
-      <img
-        class="arrow-icon-img"
-        src="/icons/chevron-right.svg"
-        alt=""
-        width="16"
-        height="16"
-      />
-    </a>
-
-    <!-- Footer Icons Container -->
-    <div class="footer-links-wrapper">
-      <a
-        href="https://www.instagram.com/gattsossuplementos/"
-        class="footer-icon-btn"
-        target="_blank"
-        rel="noopener"
-        aria-label="Instagram"
-      >
-        <img
-          class="footer-icon-img"
-          src="/icons/ig-icon.svg"
-          alt=""
-          width="20"
-          height="20"
-        />
-      </a>
-
-      <a
-        href="https://www.tiktok.com/@gattsossuplementos"
-        class="footer-icon-btn"
-        target="_blank"
-        rel="noopener"
-        aria-label="TikTok"
-      >
-        <img
-          class="footer-icon-img"
-          src="/icons/tk-icon.svg"
-          alt=""
-          width="20"
-          height="20"
-        />
-      </a>
-    </div>
   </nav>
 </main>
+
+
