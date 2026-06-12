@@ -55,6 +55,8 @@
         p.description.toLowerCase().includes(q)
       );
     }
+    // Esgotados vão pro final
+    filtered.sort((a, b) => (a.isOutOfStock === b.isOutOfStock ? 0 : a.isOutOfStock ? 1 : -1));
     return filtered;
   });
   let isDropdownOpen = $state(false);
